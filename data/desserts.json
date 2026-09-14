@@ -1,0 +1,182 @@
+[
+  {
+    "id": "cake-01",
+    "name": "Belgian Chocolate Truffle Cake",
+    "category": "Cakes",
+    "description": "Rich layers of 70% dark Belgian chocolate sponge filled with velvety ganache and dusted with Dutch cocoa.",
+    "price": 380,
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 142
+  },
+  {
+    "id": "cake-02",
+    "name": "Red Velvet Blossom Cake",
+    "category": "Cakes",
+    "description": "Crimson cocoa sponge infused with organic Madagascar vanilla and layered with signature whipped cream cheese frosting.",
+    "price": 350,
+    "image": "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 98
+  },
+  {
+    "id": "cake-03",
+    "name": "Espresso Tiramisu Layer Cake",
+    "category": "Cakes",
+    "description": "Savoiardi sponge soaked in freshly brewed Arabica espresso, layered with silky mascarpone and dark chocolate curls.",
+    "price": 390,
+    "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 115
+  },
+  {
+    "id": "pastry-01",
+    "name": "Parisian Opera Pastry",
+    "category": "Pastries",
+    "description": "Classic French almond sponge cake moistened with coffee syrup, layered with ganache and coffee buttercream with a glossy glaze.",
+    "price": 180,
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.7,
+    "ratingCount": 84
+  },
+  {
+    "id": "pastry-02",
+    "name": "Strawberry Choux Pastry",
+    "category": "Pastries",
+    "description": "Crisp golden craquelin choux bun overflowing with Tahitian vanilla bean mousseline and fresh Mahabaleshwar strawberries.",
+    "price": 160,
+    "image": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 67
+  },
+  {
+    "id": "pastry-03",
+    "name": "Pistachio Raspberry Mille-Feuille",
+    "category": "Pastries",
+    "description": "Caramelized flaky puff pastry stacked with silky Iranian pistachio diplomat cream and wild raspberry coulis.",
+    "price": 220,
+    "image": "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 92
+  },
+  {
+    "id": "cookie-01",
+    "name": "Choco-Chunk Sea Salt Cookie",
+    "category": "Cookies",
+    "description": "Crisp around the edges with a molten, gooey center of dark chocolate chunks, finished with Maldon sea salt flakes.",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 210
+  },
+  {
+    "id": "cookie-02",
+    "name": "Double Hazelnut Praline Cookie",
+    "category": "Cookies",
+    "description": "Toasted Turkish hazelnuts folded into rich browned-butter dough with swirls of caramelized hazelnut butter.",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 76
+  },
+  {
+    "id": "cookie-03",
+    "name": "Spiced Biscoff Stuffed Cookie",
+    "category": "Cookies",
+    "description": "Warm cinnamon-spiced cookie dough with a molten core of melted Lotus Biscoff spread and crushed speculoos crumbs.",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 133
+  },
+  {
+    "id": "brownie-01",
+    "name": "Gooey Walnut Fudge Brownie",
+    "category": "Brownies",
+    "description": "Ultra-fudgy dark chocolate brownie baked to perfection with crunchy roasted Kashmiri walnuts and crackly crinkle top.",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 189
+  },
+  {
+    "id": "brownie-02",
+    "name": "Salted Caramel Swirl Brownie",
+    "category": "Brownies",
+    "description": "Dense chocolate fudge brownie layered with ribbons of house-made buttery fleur de sel salted caramel.",
+    "price": 170,
+    "image": "https://images.unsplash.com/photo-1515037893149-de7f840978e2?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 124
+  },
+  {
+    "id": "brownie-03",
+    "name": "Espresso Dark Ganache Brownie",
+    "category": "Brownies",
+    "description": "Infused with bold espresso extract and topped with a glossy 65% single-origin dark chocolate ganache glaze.",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.7,
+    "ratingCount": 95
+  },
+  {
+    "id": "cheesecake-01",
+    "name": "New York Baked Cheesecake",
+    "category": "Cheesecakes",
+    "description": "Velvety, slow-baked Philadelphia cream cheese filling on a buttery honey graham cracker crust with a light sour cream glaze.",
+    "price": 260,
+    "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 178
+  },
+  {
+    "id": "cheesecake-02",
+    "name": "Blueberry Swirl Cheesecake",
+    "category": "Cheesecakes",
+    "description": "Classic creamy cheesecake swirled with handmade wild Canadian blueberry compote and topped with plump fresh berries.",
+    "price": 280,
+    "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 162
+  },
+  {
+    "id": "cheesecake-03",
+    "name": "Lotus Biscoff Dream Cheesecake",
+    "category": "Cheesecakes",
+    "description": "Biscoff cookie crust, creamy speculoos cream cheese mousse, topped with warm drizzled Biscoff spread and cookie crumb crown.",
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=800&q=80",
+    "rating": 5.0,
+    "ratingCount": 240
+  },
+  {
+    "id": "icecream-01",
+    "name": "Madagascar Vanilla Bean Gelato",
+    "category": "Ice Cream",
+    "description": "Artisanal slow-churned whole cream gelato infused with fragrant seeds of authentic Bourbon Madagascar vanilla pods.",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 110
+  },
+  {
+    "id": "icecream-02",
+    "name": "Roasted Almond Belgian Gelato",
+    "category": "Ice Cream",
+    "description": "Decadent dark chocolate gelato studded with golden honey-roasted almond slivers and bitter chocolate flakes.",
+    "price": 160,
+    "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.9,
+    "ratingCount": 145
+  },
+  {
+    "id": "icecream-03",
+    "name": "Wild Berry Sorbet",
+    "category": "Ice Cream",
+    "description": "Refreshing dairy-free sorbet bursting with ripe blackberries, raspberries, and strawberries with a splash of Meyer lemon.",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "ratingCount": 88
+  }
+]

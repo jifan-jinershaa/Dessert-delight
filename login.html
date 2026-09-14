@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Dessert Delight</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <div class="announcement-bar">Handcrafted Fresh Daily &bull; Sweet moments, made delicious.</div>
+  <main class="auth-shell">
+    <section class="auth-brand-panel">
+      <span class="eyebrow">DESSERT DELIGHT</span>
+      <h1>Welcome to your<br><em>sweetest place.</em></h1>
+      <p>Sign in to order your favourites, save your details, and keep every Dessert Delight order in one place.</p>
+      <div class="auth-feature"><span>01</span><div><strong>Freshly Crafted</strong><small>Premium desserts prepared daily.</small></div></div>
+      <div class="auth-feature"><span>02</span><div><strong>Easy Ordering</strong><small>A seamless checkout experience.</small></div></div>
+      <div class="auth-feature"><span>03</span><div><strong>Order History</strong><small>View all your previous orders anytime.</small></div></div>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-target="login-form">Sign In</button>
+        <button class="auth-tab" data-target="register-form">Create Account</button>
+      </div>
+      <div id="auth-message" class="auth-message" aria-live="polite"></div>
+
+      <form id="login-form" class="auth-form">
+        <div class="auth-heading"><span class="eyebrow">WELCOME BACK</span><h2>Sign in</h2><p>Enter your account details to continue.</p></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input class="form-control" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="form-group"><label class="form-label">Password</label><input class="form-control" name="password" type="password" placeholder="Enter your password" required></div>
+        <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+      </form>
+
+      <form id="register-form" class="auth-form" style="display:none">
+        <div class="auth-heading"><span class="eyebrow">JOIN US</span><h2>Create account</h2><p>Your order history starts here.</p></div>
+        <div class="form-group"><label class="form-label">Full Name</label><input class="form-control" name="name" type="text" placeholder="Your full name" required></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input class="form-control" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="form-group"><label class="form-label">Phone Number</label><input class="form-control" name="phone" type="tel" placeholder="9876543210"></div>
+        <div class="form-group"><label class="form-label">Password</label><input class="form-control" name="password" type="password" placeholder="Minimum 6 characters" minlength="6" required></div>
+        <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+      </form>
+      <p class="auth-note">Your account is used only to securely manage your Dessert Delight orders.</p>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+  <script>
+    document.querySelectorAll('.auth-tab').forEach(tab => tab.addEventListener('click', () => {
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.auth-form').forEach(f => f.style.display = 'none');
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.target).style.display = 'block';
+      const msg = document.getElementById('auth-message'); msg.className = 'auth-message'; msg.textContent = '';
+    }));
+  </script>
+</body>
+</html>
