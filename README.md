@@ -1,69 +1,104 @@
-# 🍰 Dessert Delight — Full-Stack Artisanal E-Commerce Platform
+🍰 Dessert Delight — Full-Stack Artisanal E-Commerce Platform
 
-> A production-ready, full-stack dessert ordering web application designed with a warm, editorial European bakery aesthetic. Built using **Vanilla JavaScript (ES6+)**, **HTML5/CSS3**, **Node.js**, **Express.js**, and **MongoDB / Mongoose**.
-
----
-
-## 🌟 Key Highlights & Portfolio Value
-
-- **Clean Architectural Separation**: RESTful API backend built with Express and Mongoose, modular routes, and decoupled frontend.
-- **Resilient Fallback Design**: Automatically connects to local or cloud MongoDB if available, but gracefully falls back to an in-memory repository if the database service is offline, preventing 500 errors during portfolio interviews or evaluator demos.
-- **Editorial Brand Aesthetic**: Tailored color palette (`#F8F1E7` primary cream, `#4A2C20` dark cocoa, `#C9828D` muted rose), typography paired with *Playfair Display* and *DM Sans*, rounded cards, micro-interactions, and zero generic Bootstrap boilerplate.
-- **End-to-End Shopping Flow**: Dynamic catalog, live search & category filtering, quick tasting notes modal, quantity steppers, cart persistence with `localStorage`, form validation, order creation with unique `DD` IDs, contact inquiries, and interactive 5-star customer feedback.
+A production-ready, full-stack dessert ordering web application designed with a warm, editorial European bakery aesthetic. Built using Vanilla JavaScript (ES6+), HTML5/CSS3, Node.js, Express.js, and MongoDB / Mongoose.
 
 ---
 
-## 📁 Project Structure
+🌟 Key Highlights & Portfolio Value
 
-```
+Clean Architectural Separation
+
+- RESTful API backend built with Express and Mongoose
+- Modular routes
+- Decoupled frontend and backend architecture
+
+Production-ready Backend
+
+- MongoDB-backed data persistence
+- Server-side price calculation
+- Rate limiting
+- Environment-based configuration
+- Development fallback support
+- Deployment-ready backend architecture
+
+Editorial Brand Aesthetic
+
+- Warm cream-based color palette
+- Dark cocoa typography
+- Muted rose accents
+- Playfair Display and DM Sans typography
+- Rounded cards
+- Micro-interactions
+- Responsive layouts
+- Custom bakery-inspired visual identity
+
+End-to-End Shopping Flow
+
+- Dynamic dessert catalog
+- Live search
+- Category filtering
+- Quick tasting notes modal
+- Quantity steppers
+- Cart persistence using localStorage
+- Form validation
+- Order creation with unique DD IDs
+- Contact inquiries
+- Interactive 5-star customer feedback
+- Order confirmation flow
+
+---
+
+📁 Project Structure
+
+```text
 dessert-delight/
 │
-├── index.html              # Homepage (Hero, Feature Strip, Brand Story, Popular Desserts)
-├── desserts.html           # Menu Catalog (Live Search, Category Filters, Cards, Quick View)
-├── cart.html               # Shopping Cart (Line items, Quantity stepper, Subtotal & Delivery)
-├── order.html              # Checkout & Order Confirmation (Customer/Delivery/Payment, Success screen)
+├── index.html              # Homepage
+├── desserts.html           # Menu Catalog
+├── cart.html               # Shopping Cart
+├── order.html              # Checkout & Order Confirmation
 ├── contact.html            # Contact Page & Inquiry Form
-├── feedback.html           # Customer Reviews & 5-Star Feedback Form + Testimonials
+├── feedback.html           # Customer Reviews & Feedback
 │
 ├── css/
-│   └── style.css           # Design tokens, variables, typography, layouts, animations & media queries
+│   └── style.css           # Design system, layouts and animations
 │
 ├── js/
-│   └── script.js           # Cart engine (localStorage), API integration, toasts, modal & forms
+│   └── script.js           # Cart engine, API integration and forms
 │
 ├── data/
-│   └── desserts.json       # 18 curated dessert items across 6 categories with INR (₹) pricing
+│   └── desserts.json       # Dessert catalog and pricing
 │
 ├── config/
-│   └── db.js               # MongoDB Mongoose connection with resilient fallback
+│   └── db.js               # MongoDB Mongoose connection
 │
 ├── models/
-│   ├── Order.js            # Mongoose schema for Orders (DD... ID, customer, items, totals, status)
-│   ├── Contact.js          # Mongoose schema for Contact inquiries
-│   └── Feedback.js         # Mongoose schema for Customer reviews
+│   ├── Order.js            # Order schema
+│   ├── Contact.js          # Contact inquiry schema
+│   └── Feedback.js         # Customer feedback schema
 │
 ├── routes/
-│   ├── orderRoutes.js      # POST /api/orders, GET /api/orders/:id
-│   ├── contactRoutes.js    # POST /api/contact
-│   └── feedbackRoutes.js   # POST /api/feedback, GET /api/feedback
+│   ├── orderRoutes.js      # Order API routes
+│   ├── contactRoutes.js    # Contact API routes
+│   └── feedbackRoutes.js   # Feedback API routes
 │
-├── server.js               # Express application entrypoint, static server, and error handling
-├── package.json            # Node.js project manifest & scripts
-├── .env                    # Environment variables (PORT, MONGODB_URI)
-├── .gitignore              # Git ignored files (node_modules, .env)
-└── README.md               # Complete documentation
+├── server.js               # Express application entry point
+├── package.json            # Node.js project configuration
+├── .gitignore              # Git ignored files
+└── README.md               # Project documentation
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+🚀 Quick Start Guide
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [npm](https://www.npmjs.com/) (installed with Node)
-- *(Optional)* [MongoDB Community Server](https://www.mongodb.com/try/download/community) or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+Prerequisites
 
-### 1. Installation
+- Node.js v16 or higher
+- npm
+- MongoDB Community Server or MongoDB Atlas
+
+Installation
 
 Clone or download the project into your local directory:
 
@@ -72,9 +107,9 @@ cd dessert-delight
 npm install
 ```
 
-### 2. Environment Configuration
+Environment Configuration
 
-The application includes a pre-configured `.env` file:
+Create or configure your .env file:
 
 ```env
 PORT=5000
@@ -82,51 +117,56 @@ MONGODB_URI=mongodb://localhost:27017/dessert_delight
 NODE_ENV=development
 ```
 
-- **Local MongoDB**: If MongoDB is installed locally, make sure the service is running (`mongod` or via Windows Services).
-- **MongoDB Atlas (Cloud)**: Replace `MONGODB_URI` with your connection string:
-  ```env
-  MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/dessert_delight?retryWrites=true&w=majority
-  ```
-- **Demo Mode**: If no MongoDB server is running, the server automatically switches to an in-memory repository so you can test all features seamlessly without error.
+For MongoDB Atlas:
 
-### 3. Launch the Application
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/dessert_delight?retryWrites=true&w=majority
+```
 
-To start the server:
+If MongoDB is unavailable during local development, the application can use its development fallback repository where supported.
+
+Launch the Application
+
+Start the server:
 
 ```bash
 npm start
 ```
 
-Or for development with automatic reload:
+Or run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open your browser and navigate to:
-```
+Open:
+
+```text
 http://localhost:5000
 ```
 
 ---
 
-## 📡 REST API Documentation
+📡 REST API Documentation
 
-### Base URL: `http://localhost:5000/api`
+Base URL:
+
+```text
+http://localhost:5000/api
+```
 
 | Method | Endpoint | Description | Status Codes |
-|---|---|---|---|
-| `GET` | `/health` | Server health check | `200 OK` |
-| `GET` | `/desserts` | Fetch all desserts (supports `?category=` & `?search=`) | `200 OK`, `500` |
-| `POST` | `/orders` | Place a new dessert order | `201 Created`, `400`, `500` |
-| `GET` | `/orders/:id` | Fetch order details by order ID (`DD...`) | `200 OK`, `404`, `500` |
-| `POST` | `/contact` | Submit a contact or catering inquiry | `201 Created`, `400`, `500` |
-| `GET` | `/feedback` | Retrieve approved patron reviews | `200 OK`, `500` |
-| `POST` | `/feedback` | Submit a new customer review (1–5 stars) | `201 Created`, `400`, `500` |
+| --- | --- | --- | --- |
+| GET | /health | Server health check | 200 OK |
+| GET | /desserts | Fetch desserts with category/search filters | 200 OK, 500 |
+| POST | /orders | Place a new dessert order | 201 Created, 400, 500 |
+| GET | /orders/:id | Fetch order details | 200 OK, 404, 500 |
+| POST | /contact | Submit a contact inquiry | 201 Created, 400, 500 |
+| GET | /feedback | Retrieve customer reviews | 200 OK, 500 |
+| POST | /feedback | Submit customer feedback | 201 Created, 400, 500 |
 
-### Sample Payloads
+Sample Order Request
 
-#### `POST /api/orders`
 ```json
 {
   "customer": {
@@ -141,8 +181,7 @@ http://localhost:5000
     {
       "name": "Belgian Chocolate Truffle Cake",
       "price": 380,
-      "quantity": 1,
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587"
+      "quantity": 1
     }
   ],
   "subtotal": 380,
@@ -151,7 +190,8 @@ http://localhost:5000
 }
 ```
 
-**Response (`201 Created`)**:
+Sample Response
+
 ```json
 {
   "success": true,
@@ -167,48 +207,64 @@ http://localhost:5000
 
 ---
 
-## 🎨 Design Philosophy & Color System
+🎨 Design Philosophy & Color System
 
 | Token | Hex Value | Role |
-|---|---|---|
-| Primary Background | `#F8F1E7` | Warm, welcoming editorial cream background |
-| Secondary Cream | `#EFE3D3` | Section dividers, badges, cards accents |
-| Dark Brown | `#4A2C20` | Primary typography, high-emphasis buttons |
-| Medium Brown | `#765548` | Secondary labels, subtle outlines |
-| Muted Rose | `#C9828D` | Accent color, active highlights, badges |
-| Soft Rose | `#F3D9DC` | Gentle background tint, star rating backdrops |
-| Pure White | `#FFFFFF` | Card surfaces, container cards |
-| Deep Text | `#2F2420` | High-legibility body content |
+| --- | --- | --- |
+| Primary Background | #F8F1E7 | Warm editorial cream |
+| Secondary Cream | #EFE3D3 | Sections, cards and accents |
+| Dark Brown | #4A2C20 | Primary typography and buttons |
+| Medium Brown | #765548 | Secondary labels |
+| Muted Rose | #C9828D | Accent elements |
+| Soft Rose | #F3D9DC | Background highlights |
+| Pure White | #FFFFFF | Card surfaces |
+| Deep Text | #2F2420 | Body text |
 
 ---
 
-## 🚢 GitHub & Deployment Instructions
+🚢 GitHub & Render Deployment
 
-### 1. Push to GitHub
+Push the project to GitHub:
+
 ```bash
 git init
 git add .
-git commit -m "feat: complete production-ready Dessert Delight full-stack platform"
+git commit -m "feat: complete Dessert Delight full-stack platform"
 git branch -M main
 git remote add origin https://github.com/your-username/dessert-delight.git
 git push -u origin main
 ```
 
-### 2. Deploy on Render / Railway
-1. Sign in to [Render](https://render.com) or [Railway](https://railway.app).
-2. Create a new **Web Service** and link your GitHub repository.
-3. Build Command: `npm install`
-4. Start Command: `node server.js`
-5. Add Environment Variables:
-   - `PORT`: `5000` (or leave default assigned by platform)
-   - `MONGODB_URI`: Your MongoDB Atlas connection URI
-   - `NODE_ENV`: `production`
+Render Deployment
+
+Create a new Web Service on Render and connect the GitHub repository.
+
+Build Command:
+
+```text
+npm install
+```
+
+Start Command:
+
+```text
+node server.js
+```
+
+Environment Variables:
+
+```text
+PORT
+MONGODB_URI
+NODE_ENV=production
+```
+
+For production deployment, use a MongoDB Atlas connection string for MONGODB_URI.
 
 ---
 
-## 💼 Placement Portfolio Notes
+🌐 Live Demo
 
-When discussing this project in an engineering interview:
-1. **Frontend Architecture**: Built using clean, vanilla JavaScript to demonstrate core DOM manipulation, asynchronous fetching, event delegation, and state persistence via Web Storage APIs.
-2. **Backend Architecture**: RESTful API design using Express, modular routing, input validation middleware, Mongoose schema modeling, and robust error handling.
-3. **Product-Thinking & UX**: Emphasis on feedback loops (custom toasts, quantity steppers, live search debounce, quick modal views, empty and success states).
+Render Deployment:
+
+https://your-dessert-delight-app.onrender.com

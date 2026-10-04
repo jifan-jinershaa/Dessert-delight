@@ -634,6 +634,7 @@
         city,
         paymentMethod,
         items: cart.map((i) => ({
+          id: i.id,
           name: i.name,
           price: i.price,
           quantity: i.quantity,

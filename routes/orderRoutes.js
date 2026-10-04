@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Order = require('../models/Order');
 const { isDBConnected } = require('../config/db');
+const { findDessert } = require('../lib/catalog');
 
 const inMemoryOrders = [];
 const generateOrderId = () => `DD${Date.now()}${Math.floor(100 + Math.random() * 900)}`;
@@ -20,7 +21,16 @@ router.post('/', requireAuth, async (req, res) => {
     if (!/^[0-9+ -]{8,15}$/.test(customer.phone.trim())) return res.status(400).json({ success: false, message: 'Please provide a valid phone number.' });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email.trim())) return res.status(400).json({ success: false, message: 'Please provide a valid email address.' });
 
-    const calculatedSubtotal = items.reduce((sum, item) => sum + (Number(item.price) || 0) * (Number(item.quantity) || 1), 0);
+    // Prices come from the server-side catalog, never from the browser.
+    const orderItems = [];
+    for (const item of items) {
+      const dessert = findDessert(item);
+      if (!dessert) return res.status(400).json({ success: false, message: `"${String(item?.name || 'Item').slice(0, 60)}" is not available.` });
+      const quantity = Number(item.quantity);
+      if (!Number.isInteger(quantity) || quantity < 1 || quantity > 50) return res.status(400).json({ success: false, message: 'Invalid item quantity.' });
+      orderItems.push({ name: dessert.name, price: dessert.price, quantity, image: dessert.image || '' });
+    }
+    const calculatedSubtotal = orderItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
     const delivery = calculatedSubtotal > 0 ? 40 : 0;
     const orderData = {
       orderId: generateOrderId(),
@@ -28,7 +38,7 @@ router.post('/', requireAuth, async (req, res) => {
       customer: { name: customer.name.trim(), phone: customer.phone.trim(), email: customer.email.trim().toLowerCase() },
       address: address.trim(), city: city.trim(),
       paymentMethod: paymentMethod === 'UPI' ? 'UPI' : 'Cash on Delivery',
-      items: items.map(i => ({ name: i.name, price: Number(i.price), quantity: Number(i.quantity) || 1, image: i.image || '' })),
+      items: orderItems,
       subtotal: calculatedSubtotal, delivery, total: calculatedSubtotal + delivery,
       status: 'Pending', createdAt: new Date(),
     };
