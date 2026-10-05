@@ -267,4 +267,5 @@ For production deployment, use a MongoDB Atlas connection string for MONGODB_URI
 
 Render Deployment:
 
-https://your-dessert-delight-app.onrender.com
+https://dessertdelight.onrender.com/login.html
+
